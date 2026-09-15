@@ -251,6 +251,38 @@
 
   .story-media.stack figure + figure{margin-top:20px;}
 
+  .video-embed{
+    position:relative;
+    width:100%;
+    aspect-ratio:16/9;
+    border-radius:var(--radius);
+    overflow:hidden;
+    box-shadow:0 20px 40px -20px rgba(36,27,22,.4);
+    background:#000;
+  }
+  .video-embed iframe{
+    position:absolute;inset:0;
+    width:100%;height:100%;
+    border:0;
+  }
+
+  .hook-video{
+    padding:60px 0 0;
+  }
+  .hook-video .video-embed{
+    max-width:760px;
+    margin:0 auto;
+    box-shadow:0 30px 60px -24px rgba(36,27,22,.5);
+  }
+  .hook-video figcaption{
+    max-width:760px;
+    margin:16px auto 0;
+    font-size:.86rem;
+    font-style:italic;
+    color:var(--muted);
+    text-align:center;
+  }
+
   /* ---------- PULL QUOTE PANEL (text-only chapters) ---------- */
   .pull-panel{
     background:var(--ink);
@@ -486,6 +518,18 @@
     </div>
   </section>
 
+  <!-- HOOK VIDEO -->
+  <section class="hook-video">
+    <div class="wrap">
+      <figure>
+        <div class="video-embed">
+          <iframe src="https://drive.google.com/file/d/131zWwEEAglQ3QSDc9muEiISMO2AuQzUP/preview" allow="autoplay" allowfullscreen title="Alliance High medical and mental health camp, Nairobi"></iframe>
+        </div>
+        <figcaption>Video: a joint medical and mental health camp with Alliance High School's Peer Counsellors Society, Nairobi. This is the work, in motion.</figcaption>
+      </figure>
+    </div>
+  </section>
+
   <!-- CHAPTER 1: THE WHY -->
   <section id="story">
     <div class="narrow lede-block">
@@ -532,6 +576,18 @@
           <figure>
             <img src="images/gallery-school-outreach-3.jpg" alt="Addressing a school assembly in red uniforms">
             <figcaption>A different school, a different uniform, the same message repeated until it sticks.</figcaption>
+          </figure>
+          <figure>
+            <div class="video-embed">
+              <iframe src="https://drive.google.com/file/d/1OKy36HJZhTRquBxJ1V18imfB845jThnT/preview" allow="autoplay" allowfullscreen title="Wellness session at St Juliet's School, Kibera"></iframe>
+            </div>
+            <figcaption>Video: a wellness session at St Juliet's School, Kibera.</figcaption>
+          </figure>
+          <figure>
+            <div class="video-embed">
+              <iframe src="https://drive.google.com/file/d/1nw4i2kj7BnqFfoCjvXMcI0ViSstMMqgt/preview" allow="autoplay" allowfullscreen title="Community conversation at Ajax Library, Mathare"></iframe>
+            </div>
+            <figcaption>Video: a community conversation at Ajax Library, Mathare.</figcaption>
           </figure>
         </div>
       </div>
@@ -585,6 +641,18 @@
             <img src="images/gallery-cbd-advocacy.jpg" alt="Briefing partners during an advocacy campaign in Nairobi">
             <figcaption>A quieter moment mid-campaign, briefing a partner organisation on the day's push.</figcaption>
           </figure>
+          <figure>
+            <div class="video-embed">
+              <iframe src="https://drive.google.com/file/d/1Qy7qrdsYDUoUL-tQG2f2NIIK80-hIucz/preview" allow="autoplay" allowfullscreen title="Medical camp on Nairobi's streets"></iframe>
+            </div>
+            <figcaption>Video: a medical camp set up right on Nairobi's streets, meeting people exactly where they are.</figcaption>
+          </figure>
+          <figure>
+            <div class="video-embed">
+              <iframe src="https://drive.google.com/file/d/1EWuzJu4fpa_jYd6J57zHwJtIvEnuc0Fp/preview" allow="autoplay" allowfullscreen title="Medical camp for street families, Nairobi"></iframe>
+            </div>
+            <figcaption>Video: a medical camp for street families in Nairobi. Healthcare with no waiting room and no appointment book.</figcaption>
+          </figure>
         </div>
       </div>
     </div>
@@ -596,12 +664,10 @@
       <div class="story-block reverse">
         <div class="story-text">
           <div class="kicker">Chapter five. Hands-on impact</div>
-          <span class="role-tag">PR &amp; Communications Officer, Octopizzo Foundation, since Nov 2025</span>
-          <h3>Impact is also a box of sanitary pads and a working water filter</h3>
-          <p>Alongside her HUGs role, Olwande supports Octopizzo Foundation's communications strategy for community development, sustainability and youth empowerment. She helped tell the story behind the Clean Energy Kitchen Initiative, a circular economy innovation that converts sugarcane husks into clean cooking fuel while distributing water filters to underserved households, reducing indoor air pollution and improving access to safe drinking water.</p>
-          <p>The rest of the work is less glamorous and just as necessary: sorting donated goods, restocking supply tables, and showing up at shelters after dark.</p>
+          <h3>Impact is also a box of sanitary pads and a full truck to unload</h3>
+          <p>Some of the work is less glamorous than a press release and just as necessary: sorting donated goods, restocking supply tables, and drawing a bigger crowd at the community day every year. This is where strategy turns into boxes carried, tables set up and forms filled out by hand.</p>
         </div>
-        <div class="story-media stack">
+        <div class="story-media two-up">
           <figure>
             <img src="images/gallery-sanitary-drive.jpg" alt="Volunteers sorting sanitary products for a distribution drive">
             <figcaption>Sorting sanitary products for distribution. Dignity, delivered one box at a time.</figcaption>
@@ -610,19 +676,86 @@
             <img src="images/gallery-community-day.jpg" alt="Large group photo at a community empowerment day">
             <figcaption>A community empowerment day draws a bigger crowd every year.</figcaption>
           </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPTER 6: SHELTERS AND RESCUE HOMES -->
+  <section class="story">
+    <div class="wrap">
+      <div class="story-block" style="align-items:start;">
+        <div class="story-text">
+          <div class="kicker">Chapter six. Behind closed doors</div>
+          <h3>Some of the most important visits happen after the cameras would normally stop</h3>
+          <p>Not every programme fits neatly into a schedule. Children's homes and rescue homes across Nairobi get the same attention as the flagship events: a visit, a conversation, a reminder that someone outside is still paying attention.</p>
+        </div>
+        <div class="story-media stack">
           <figure>
             <img src="images/gallery-shelter-visit.jpg" alt="Evening visit to a children's shelter">
             <figcaption>An evening visit to a children's shelter. The work does not stop when the sun goes down.</figcaption>
+          </figure>
+          <figure>
+            <div class="video-embed">
+              <iframe src="https://drive.google.com/file/d/1C932dXV26UXcX9WoL0ixB3u-JCe7Z5Ea/preview" allow="autoplay" allowfullscreen title="Visit to a children's home, Mathare"></iframe>
+            </div>
+            <figcaption>Video: a visit to a children's home in Mathare.</figcaption>
+          </figure>
+          <figure>
+            <div class="video-embed">
+              <iframe src="https://drive.google.com/file/d/1tGGu5jriXR6zCG1PEJUXpiONk5ucMZ4Y/preview" allow="autoplay" allowfullscreen title="Children's home in Makadara"></iframe>
+            </div>
+            <figcaption>Video: a children's home in Makadara. Different neighbourhood, same commitment to show up.</figcaption>
+          </figure>
+          <figure>
+            <div class="video-embed">
+              <iframe src="https://drive.google.com/file/d/14l97AGpiOOe1b9erYTVkuB7rch94bRu-/preview" allow="autoplay" allowfullscreen title="Rescue home in Eastlands"></iframe>
+            </div>
+            <figcaption>Video: a rescue home in Eastlands, part of the wider network of shelters this work touches.</figcaption>
           </figure>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CHAPTER 6: CREATIVITY AS ADVOCACY (pull quote panel) -->
+  <!-- CHAPTER 7: CLEAN ENERGY, WATER AND CLEANER STREETS -->
+  <section class="story" style="background:var(--paper-2);">
+    <div class="wrap">
+      <div class="story-block reverse" style="align-items:start;">
+        <div class="story-text">
+          <div class="kicker">Chapter seven. Sustainability</div>
+          <span class="role-tag">PR &amp; Communications Officer, Octopizzo Foundation, since Nov 2025</span>
+          <h3>A working water filter is also a communications win</h3>
+          <p>Alongside her HUGs role, Olwande supports Octopizzo Foundation's communications strategy for community development, sustainability and youth empowerment. She helped tell the story behind the Clean Energy Kitchen and WASH Initiative, a circular economy innovation that converts sugarcane husks into clean cooking fuel while distributing water filters to underserved households, reducing indoor air pollution and improving access to safe drinking water.</p>
+        </div>
+        <div class="story-media stack">
+          <figure>
+            <div class="video-embed">
+              <iframe src="https://drive.google.com/file/d/1_qXYaemH2bOt7CG7rXTk21rmuWCeeG56/preview" allow="autoplay" allowfullscreen title="Octopizzo Foundation programme in Ugunja, Siaya"></iframe>
+            </div>
+            <figcaption>Video: on the ground with Octopizzo Foundation in Ugunja, Siaya.</figcaption>
+          </figure>
+          <figure>
+            <div class="video-embed">
+              <iframe src="https://drive.google.com/file/d/1SoTeWYkxlydZ0uYHgDirLdnq-AnTgMW5/preview" allow="autoplay" allowfullscreen title="WASH programme, Ugunja"></iframe>
+            </div>
+            <figcaption>Video: the WASH programme in action in Ugunja. Clean water and sanitation, not just policy language.</figcaption>
+          </figure>
+          <figure>
+            <div class="video-embed">
+              <iframe src="https://drive.google.com/file/d/1MftwQZ5O9FWZWM6cO1vkV338YZpypaJT/preview" allow="autoplay" allowfullscreen title="Environmental clean-up drive, Kibera"></iframe>
+            </div>
+            <figcaption>Video: an environmental clean-up drive in Kibera.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPTER 8: CREATIVITY AS ADVOCACY (pull quote panel) -->
   <section class="pull-panel">
     <div class="narrow">
-      <div class="kicker">Chapter six. Creativity as advocacy</div>
+      <div class="kicker">Chapter eight. Creativity as advocacy</div>
       <h3>Fashion, a podcast mic and a conversation Kenya keeps needing to have</h3>
       <p>Off the programme calendar, Olwande designs upcycled, eco-conscious fashion pieces that turn reclaimed materials into wearable art, and curates bespoke styling experiences built around confidence and self-expression. As a digital creator, she makes content exploring Kenyan culture, modern womanhood, relationships and emotional wellness, bridging online influence with on-the-ground community conversations.</p>
       <blockquote>"Driven by purpose. Rooted in community. Powered by creativity."</blockquote>
@@ -633,7 +766,7 @@
   <section class="dossier">
     <div class="wrap">
       <div class="section-head" style="text-align:center;margin-bottom:36px;">
-        <div class="kicker" style="justify-content:center;">Chapter seven. The other career</div>
+        <div class="kicker" style="justify-content:center;">Chapter nine. The other career</div>
         <h2 style="margin:0 auto;">By day, she also closes deals</h2>
       </div>
       <div class="dossier-card">
@@ -779,6 +912,7 @@
         <ul class="contact-list">
           <li><a href="mailto:olwandeakoth@gmail.com"><span class="ico">&#9993;</span> olwandeakoth@gmail.com</a></li>
           <li><a href="https://wa.me/254708762626" target="_blank" rel="noopener"><span class="ico">&#128172;</span> +254 708 762 626 on WhatsApp</a></li>
+          <li><a href="https://www.linkedin.com/in/olwande-akoth-270346b6/" target="_blank" rel="noopener"><span class="ico">in</span> LinkedIn</a></li>
           <li><a href="#"><span class="ico">&#128205;</span> 314-00100 Nairobi, Kenya</a></li>
         </ul>
       </div>
