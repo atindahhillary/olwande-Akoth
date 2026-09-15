@@ -4,30 +4,18 @@ A one-page profile site for Olwande Akoth, Social Impact Advocate, PR and Commun
 
 ## View it live
 
-**https://atindahhillary.github.io/olwande-Akoth/**
+Primary: https://atindahhillary.github.io/olwande-Akoth/
 
-> If that link 404s, GitHub Pages hasn't been switched on for this repo yet. See [Enable the live link](#enable-the-live-link) below (one-time, about 1 minute).
+Mirror: https://olwande-akoth-atindlets.vercel.app/
+
+Both publish from the main branch. GitHub Pages deploys from main, root folder.
 
 ## View it locally
 
-No build step or server needed, just open the file directly:
-
-```
-index.html
-```
-
-Double-click it, or drag it into any browser (Chrome, Edge, Firefox, Safari).
-
-## Enable the live link
-
-1. Go to the repo on GitHub, then **Settings** > **Pages**.
-2. Under "Build and deployment", set **Source** to `Deploy from a branch`.
-3. Set **Branch** to `main` and folder to `/ (root)`, then **Save**.
-4. GitHub publishes it at `https://atindahhillary.github.io/olwande-Akoth/` within a minute or two.
+No build step or server needed. Open index.html directly, or drag it into any browser.
 
 ## Structure
 
-```
-index.html   the site (all CSS/JS inline, no dependencies except a Google Fonts link)
-images/      photos used throughout the story and in the career timeline
-```
+index.html is the site itself, with all CSS and JS inline and no dependencies except a Google Fonts link.
+
+images holds the photos used throughout the story and in the career timeline.
