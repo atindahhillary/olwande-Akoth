@@ -251,8 +251,9 @@
 
   .story-media.stack figure + figure{margin-top:20px;}
 
-  .video-embed{
+  .video-card{
     position:relative;
+    display:block;
     width:100%;
     aspect-ratio:16/9;
     border-radius:var(--radius);
@@ -260,20 +261,48 @@
     box-shadow:0 20px 40px -20px rgba(36,27,22,.4);
     background:#000;
   }
-  .video-embed iframe{
+  .video-card img{
     position:absolute;inset:0;
     width:100%;height:100%;
-    border:0;
+    object-fit:cover;
+    opacity:.85;
+    transition:opacity .2s, transform .3s;
   }
+  .video-card:hover img{opacity:1;transform:scale(1.03);}
+  .video-card .play-btn{
+    position:absolute;inset:0;
+    display:flex;align-items:center;justify-content:center;
+    font-size:0;
+  }
+  .video-card .play-btn::before{
+    content:"";
+    width:56px;height:56px;
+    border-radius:50%;
+    background:rgba(24,17,13,.55);
+    border:2px solid rgba(255,255,255,.85);
+    backdrop-filter:blur(2px);
+  }
+  .video-card .play-btn::after{
+    content:"";
+    position:absolute;
+    left:50%;top:50%;
+    transform:translate(-46%,-50%);
+    border-style:solid;
+    border-width:10px 0 10px 16px;
+    border-color:transparent transparent transparent #fff;
+  }
+  .video-card:hover .play-btn::before{background:var(--rust);border-color:#fff;}
 
   .hook-video{
     padding:60px 0 0;
   }
-  .hook-video .video-embed{
+  .hook-video .video-card{
     max-width:760px;
     margin:0 auto;
     box-shadow:0 30px 60px -24px rgba(36,27,22,.5);
   }
+  .hook-video .video-card .play-btn::before{width:72px;height:72px;}
+  .hook-video .video-card .play-btn::after{border-width:13px 0 13px 20px;}
   .hook-video figcaption{
     max-width:760px;
     margin:16px auto 0;
@@ -522,9 +551,7 @@
   <section class="hook-video">
     <div class="wrap">
       <figure>
-        <div class="video-embed">
-          <iframe src="https://drive.google.com/file/d/131zWwEEAglQ3QSDc9muEiISMO2AuQzUP/preview" allow="autoplay; encrypted-media" allowfullscreen title="Alliance High medical and mental health camp, Nairobi"></iframe>
-        </div>
+        <a class="video-card" href="https://drive.google.com/file/d/131zWwEEAglQ3QSDc9muEiISMO2AuQzUP/view" target="_blank" rel="noopener" aria-label="Play video: Alliance High medical and mental health camp, Nairobi"><img src="https://drive.google.com/thumbnail?id=131zWwEEAglQ3QSDc9muEiISMO2AuQzUP&amp;sz=w1000" alt="Alliance High medical and mental health camp, Nairobi" referrerpolicy="no-referrer"><span class="play-btn" aria-hidden="true">&#9658;</span></a>
         <figcaption>Video: a joint medical and mental health camp with Alliance High School's Peer Counsellors Society, Nairobi. This is the work, in motion.</figcaption>
       </figure>
     </div>
@@ -578,15 +605,11 @@
             <figcaption>A different school, a different uniform, the same message repeated until it sticks.</figcaption>
           </figure>
           <figure>
-            <div class="video-embed">
-              <iframe src="https://drive.google.com/file/d/1OKy36HJZhTRquBxJ1V18imfB845jThnT/preview" allow="autoplay; encrypted-media" allowfullscreen title="Wellness session at St Juliet's School, Kibera"></iframe>
-            </div>
+            <a class="video-card" href="https://drive.google.com/file/d/1OKy36HJZhTRquBxJ1V18imfB845jThnT/view" target="_blank" rel="noopener" aria-label="Play video: Wellness session at St Juliet's School, Kibera"><img src="https://drive.google.com/thumbnail?id=1OKy36HJZhTRquBxJ1V18imfB845jThnT&amp;sz=w1000" alt="Wellness session at St Juliet's School, Kibera" referrerpolicy="no-referrer"><span class="play-btn" aria-hidden="true">&#9658;</span></a>
             <figcaption>Video: a wellness session at St Juliet's School, Kibera.</figcaption>
           </figure>
           <figure>
-            <div class="video-embed">
-              <iframe src="https://drive.google.com/file/d/1nw4i2kj7BnqFfoCjvXMcI0ViSstMMqgt/preview" allow="autoplay; encrypted-media" allowfullscreen title="Community conversation at Ajax Library, Mathare"></iframe>
-            </div>
+            <a class="video-card" href="https://drive.google.com/file/d/1nw4i2kj7BnqFfoCjvXMcI0ViSstMMqgt/view" target="_blank" rel="noopener" aria-label="Play video: Community conversation at Ajax Library, Mathare"><img src="https://drive.google.com/thumbnail?id=1nw4i2kj7BnqFfoCjvXMcI0ViSstMMqgt&amp;sz=w1000" alt="Community conversation at Ajax Library, Mathare" referrerpolicy="no-referrer"><span class="play-btn" aria-hidden="true">&#9658;</span></a>
             <figcaption>Video: a community conversation at Ajax Library, Mathare.</figcaption>
           </figure>
         </div>
@@ -642,15 +665,11 @@
             <figcaption>A quieter moment mid-campaign, briefing a partner organisation on the day's push.</figcaption>
           </figure>
           <figure>
-            <div class="video-embed">
-              <iframe src="https://drive.google.com/file/d/1Qy7qrdsYDUoUL-tQG2f2NIIK80-hIucz/preview" allow="autoplay; encrypted-media" allowfullscreen title="Medical camp on Nairobi's streets"></iframe>
-            </div>
+            <a class="video-card" href="https://drive.google.com/file/d/1Qy7qrdsYDUoUL-tQG2f2NIIK80-hIucz/view" target="_blank" rel="noopener" aria-label="Play video: Medical camp on Nairobi's streets"><img src="https://drive.google.com/thumbnail?id=1Qy7qrdsYDUoUL-tQG2f2NIIK80-hIucz&amp;sz=w1000" alt="Medical camp on Nairobi's streets" referrerpolicy="no-referrer"><span class="play-btn" aria-hidden="true">&#9658;</span></a>
             <figcaption>Video: a medical camp set up right on Nairobi's streets, meeting people exactly where they are.</figcaption>
           </figure>
           <figure>
-            <div class="video-embed">
-              <iframe src="https://drive.google.com/file/d/1EWuzJu4fpa_jYd6J57zHwJtIvEnuc0Fp/preview" allow="autoplay; encrypted-media" allowfullscreen title="Medical camp for street families, Nairobi"></iframe>
-            </div>
+            <a class="video-card" href="https://drive.google.com/file/d/1EWuzJu4fpa_jYd6J57zHwJtIvEnuc0Fp/view" target="_blank" rel="noopener" aria-label="Play video: Medical camp for street families, Nairobi"><img src="https://drive.google.com/thumbnail?id=1EWuzJu4fpa_jYd6J57zHwJtIvEnuc0Fp&amp;sz=w1000" alt="Medical camp for street families, Nairobi" referrerpolicy="no-referrer"><span class="play-btn" aria-hidden="true">&#9658;</span></a>
             <figcaption>Video: a medical camp for street families in Nairobi. Healthcare with no waiting room and no appointment book.</figcaption>
           </figure>
         </div>
@@ -696,21 +715,15 @@
             <figcaption>An evening visit to a children's shelter. The work does not stop when the sun goes down.</figcaption>
           </figure>
           <figure>
-            <div class="video-embed">
-              <iframe src="https://drive.google.com/file/d/1C932dXV26UXcX9WoL0ixB3u-JCe7Z5Ea/preview" allow="autoplay; encrypted-media" allowfullscreen title="Visit to a children's home, Mathare"></iframe>
-            </div>
+            <a class="video-card" href="https://drive.google.com/file/d/1C932dXV26UXcX9WoL0ixB3u-JCe7Z5Ea/view" target="_blank" rel="noopener" aria-label="Play video: Visit to a children's home, Mathare"><img src="https://drive.google.com/thumbnail?id=1C932dXV26UXcX9WoL0ixB3u-JCe7Z5Ea&amp;sz=w1000" alt="Visit to a children's home, Mathare" referrerpolicy="no-referrer"><span class="play-btn" aria-hidden="true">&#9658;</span></a>
             <figcaption>Video: a visit to a children's home in Mathare.</figcaption>
           </figure>
           <figure>
-            <div class="video-embed">
-              <iframe src="https://drive.google.com/file/d/1tGGu5jriXR6zCG1PEJUXpiONk5ucMZ4Y/preview" allow="autoplay; encrypted-media" allowfullscreen title="Children's home in Makadara"></iframe>
-            </div>
+            <a class="video-card" href="https://drive.google.com/file/d/1tGGu5jriXR6zCG1PEJUXpiONk5ucMZ4Y/view" target="_blank" rel="noopener" aria-label="Play video: Children's home in Makadara"><img src="https://drive.google.com/thumbnail?id=1tGGu5jriXR6zCG1PEJUXpiONk5ucMZ4Y&amp;sz=w1000" alt="Children's home in Makadara" referrerpolicy="no-referrer"><span class="play-btn" aria-hidden="true">&#9658;</span></a>
             <figcaption>Video: a children's home in Makadara. Different neighbourhood, same commitment to show up.</figcaption>
           </figure>
           <figure>
-            <div class="video-embed">
-              <iframe src="https://drive.google.com/file/d/14l97AGpiOOe1b9erYTVkuB7rch94bRu-/preview" allow="autoplay; encrypted-media" allowfullscreen title="Rescue home in Eastlands"></iframe>
-            </div>
+            <a class="video-card" href="https://drive.google.com/file/d/14l97AGpiOOe1b9erYTVkuB7rch94bRu-/view" target="_blank" rel="noopener" aria-label="Play video: Rescue home in Eastlands"><img src="https://drive.google.com/thumbnail?id=14l97AGpiOOe1b9erYTVkuB7rch94bRu-&amp;sz=w1000" alt="Rescue home in Eastlands" referrerpolicy="no-referrer"><span class="play-btn" aria-hidden="true">&#9658;</span></a>
             <figcaption>Video: a rescue home in Eastlands, part of the wider network of shelters this work touches.</figcaption>
           </figure>
         </div>
@@ -730,21 +743,15 @@
         </div>
         <div class="story-media stack">
           <figure>
-            <div class="video-embed">
-              <iframe src="https://drive.google.com/file/d/1_qXYaemH2bOt7CG7rXTk21rmuWCeeG56/preview" allow="autoplay; encrypted-media" allowfullscreen title="Octopizzo Foundation programme in Ugunja, Siaya"></iframe>
-            </div>
+            <a class="video-card" href="https://drive.google.com/file/d/1_qXYaemH2bOt7CG7rXTk21rmuWCeeG56/view" target="_blank" rel="noopener" aria-label="Play video: Octopizzo Foundation programme in Ugunja, Siaya"><img src="https://drive.google.com/thumbnail?id=1_qXYaemH2bOt7CG7rXTk21rmuWCeeG56&amp;sz=w1000" alt="Octopizzo Foundation programme in Ugunja, Siaya" referrerpolicy="no-referrer"><span class="play-btn" aria-hidden="true">&#9658;</span></a>
             <figcaption>Video: on the ground with Octopizzo Foundation in Ugunja, Siaya.</figcaption>
           </figure>
           <figure>
-            <div class="video-embed">
-              <iframe src="https://drive.google.com/file/d/1SoTeWYkxlydZ0uYHgDirLdnq-AnTgMW5/preview" allow="autoplay; encrypted-media" allowfullscreen title="WASH programme, Ugunja"></iframe>
-            </div>
+            <a class="video-card" href="https://drive.google.com/file/d/1SoTeWYkxlydZ0uYHgDirLdnq-AnTgMW5/view" target="_blank" rel="noopener" aria-label="Play video: WASH programme, Ugunja"><img src="https://drive.google.com/thumbnail?id=1SoTeWYkxlydZ0uYHgDirLdnq-AnTgMW5&amp;sz=w1000" alt="WASH programme, Ugunja" referrerpolicy="no-referrer"><span class="play-btn" aria-hidden="true">&#9658;</span></a>
             <figcaption>Video: the WASH programme in action in Ugunja. Clean water and sanitation, not just policy language.</figcaption>
           </figure>
           <figure>
-            <div class="video-embed">
-              <iframe src="https://drive.google.com/file/d/1MftwQZ5O9FWZWM6cO1vkV338YZpypaJT/preview" allow="autoplay; encrypted-media" allowfullscreen title="Environmental clean-up drive, Kibera"></iframe>
-            </div>
+            <a class="video-card" href="https://drive.google.com/file/d/1MftwQZ5O9FWZWM6cO1vkV338YZpypaJT/view" target="_blank" rel="noopener" aria-label="Play video: Environmental clean-up drive, Kibera"><img src="https://drive.google.com/thumbnail?id=1MftwQZ5O9FWZWM6cO1vkV338YZpypaJT&amp;sz=w1000" alt="Environmental clean-up drive, Kibera" referrerpolicy="no-referrer"><span class="play-btn" aria-hidden="true">&#9658;</span></a>
             <figcaption>Video: an environmental clean-up drive in Kibera.</figcaption>
           </figure>
         </div>
