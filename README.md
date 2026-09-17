@@ -19,3 +19,17 @@ No build step or server needed. Open index.html directly, or drag it into any br
 index.html is the site itself, with all CSS and JS inline and no dependencies except a Google Fonts link.
 
 images holds the photos used throughout the story and in the career timeline.
+
+videos holds the self-hosted video clips and their poster frames.
+
+api/chat.js is a Vercel serverless function that powers Olie, the on-site assistant.
+
+## Setting up Olie (the assistant)
+
+Olie calls a real language model through the api/chat.js serverless function, which only runs on Vercel. To turn it on:
+
+1. In the Vercel project (olwande-akoth), go to Settings > Environment Variables.
+2. Add a variable named `ANTHROPIC_API_KEY` with your Anthropic API key as the value.
+3. Redeploy (or push a commit) so the function picks up the new variable.
+
+Without that key set, or on the GitHub Pages copy of the site (which cannot run server code at all), Olie automatically falls back to a scripted quick-reply guide instead of failing silently. This means the live AI version only ever runs on the Vercel mirror, and any usage there draws on your own Anthropic API key and billing.
