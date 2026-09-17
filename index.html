@@ -335,6 +335,168 @@
     font-size:.8rem;
   }
 
+  /* ---------- SERVICES ---------- */
+  .service-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+    margin-top:8px;
+  }
+  .service-card{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:22px;
+  }
+  .service-card h3{
+    font-size:1.1rem;
+    margin-bottom:12px;
+    text-align:left;
+  }
+  .service-line{margin-bottom:10px;}
+  .service-line .label{
+    display:block;
+    font-size:.7rem;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.06em;
+    color:var(--rust);
+    margin-bottom:2px;
+  }
+  .service-line p{margin:0;font-size:.9rem;color:#3c332c;}
+
+  /* ---------- CHATBOT ---------- */
+  #chatbot-toggle{
+    position:fixed;
+    right:22px;bottom:22px;
+    width:58px;height:58px;
+    border-radius:50%;
+    background:var(--rust);
+    color:#fff;
+    border:none;
+    font-size:1.5rem;
+    cursor:pointer;
+    box-shadow:0 10px 24px rgba(184,73,47,.4);
+    z-index:100;
+    display:flex;align-items:center;justify-content:center;
+    transition:transform .15s;
+  }
+  #chatbot-toggle:hover{transform:scale(1.06);}
+  #chatbot-panel{
+    position:fixed;
+    right:22px;bottom:92px;
+    width:340px;
+    max-width:calc(100vw - 32px);
+    height:460px;
+    max-height:calc(100vh - 140px);
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:16px;
+    box-shadow:0 24px 50px -16px rgba(36,27,22,.4);
+    display:none;
+    flex-direction:column;
+    overflow:hidden;
+    z-index:100;
+  }
+  #chatbot-panel.open{display:flex;}
+  .chatbot-header{
+    background:var(--ink);
+    color:#fff;
+    padding:14px 16px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    font-weight:700;
+    font-size:.92rem;
+  }
+  .chatbot-header small{
+    display:block;
+    font-weight:500;
+    font-size:.72rem;
+    color:#d8cdbf;
+    margin-top:2px;
+  }
+  .chatbot-header button{
+    background:none;border:none;color:#fff;
+    font-size:1.2rem;cursor:pointer;line-height:1;
+    padding:4px;
+  }
+  .chatbot-messages{
+    flex:1;
+    overflow-y:auto;
+    padding:14px 16px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    background:var(--paper);
+  }
+  .chat-bubble{
+    max-width:85%;
+    padding:9px 13px;
+    border-radius:14px;
+    font-size:.86rem;
+    line-height:1.45;
+  }
+  .chat-bubble.bot{
+    background:var(--paper-2);
+    color:var(--ink);
+    align-self:flex-start;
+    border-bottom-left-radius:4px;
+  }
+  .chat-bubble.user{
+    background:var(--rust);
+    color:#fff;
+    align-self:flex-end;
+    border-bottom-right-radius:4px;
+  }
+  .chat-bubble a{color:inherit;text-decoration:underline;}
+  .chatbot-quick{
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px;
+    padding:0 16px 12px;
+    background:var(--paper);
+  }
+  .chatbot-quick button{
+    background:var(--white);
+    border:1px solid var(--line);
+    color:var(--ink);
+    font-size:.76rem;
+    font-weight:600;
+    padding:6px 11px;
+    border-radius:999px;
+    cursor:pointer;
+    transition:all .15s;
+  }
+  .chatbot-quick button:hover{background:var(--rust);color:#fff;border-color:var(--rust);}
+  #chatbot-form{
+    display:flex;
+    gap:8px;
+    padding:12px;
+    border-top:1px solid var(--line);
+    background:var(--white);
+  }
+  #chatbot-input{
+    flex:1;
+    border:1px solid var(--line);
+    border-radius:999px;
+    padding:9px 14px;
+    font-size:.86rem;
+    font-family:inherit;
+    outline:none;
+  }
+  #chatbot-input:focus{border-color:var(--rust);}
+  #chatbot-form button{
+    background:var(--rust);
+    color:#fff;
+    border:none;
+    border-radius:999px;
+    padding:0 16px;
+    font-weight:700;
+    font-size:.86rem;
+    cursor:pointer;
+  }
+
   /* ---------- RESPONSIVE ---------- */
   @media (max-width:900px){
     .contact-panel{grid-template-columns:1fr;gap:24px;}
@@ -354,6 +516,7 @@
     nav ul.open{display:flex;}
     .nav-toggle{display:block;}
     .contact-panel{padding:32px 24px;}
+    .service-grid{grid-template-columns:1fr;}
   }
   @media (max-width:600px){
     section{padding:44px 0;}
@@ -364,6 +527,11 @@
     .hook .cta-row{flex-direction:column;align-items:stretch;}
     .btn{justify-content:center;}
     .field-head{flex-direction:column;align-items:flex-start;}
+    #chatbot-panel{
+      right:16px;left:16px;width:auto;bottom:84px;
+      max-height:calc(100vh - 120px);
+    }
+    #chatbot-toggle{right:16px;bottom:16px;}
   }
 </style>
 </head>
@@ -377,6 +545,7 @@
     </button>
     <ul id="navlinks">
       <li><a href="#overview" class="nav-link active" data-panel="overview">Overview</a></li>
+      <li><a href="#services" class="nav-link" data-panel="services">Services</a></li>
       <li><a href="#social-impact" class="nav-link" data-panel="social-impact">Social Impact</a></li>
       <li><a href="#creative" class="nav-link" data-panel="creative">Creative &amp; Styling</a></li>
       <li><a href="#corporate" class="nav-link" data-panel="corporate">Corporate</a></li>
@@ -400,7 +569,7 @@
           <a class="btn btn-primary" href="mailto:olwandeakoth@gmail.com">Get in touch</a>
           <button class="btn btn-ghost" data-goto="social-impact">See the work</button>
         </div>
-        <p class="hook-caption">Photo: leading a mental health conversation at an Octopizzo Foundation outreach event. The stage is often whatever is available, a chair, a tree stump, a patch of shade.</p>
+        <p class="hook-caption">Photo: addressing a school assembly during a mental health outreach session. The stage is often whatever is available, a patch of shade and a crowd ready to listen.</p>
       </div>
     </div>
 
@@ -458,6 +627,113 @@
         </div>
         <video class="video-card" style="max-width:520px;margin:0 auto;display:block;" controls playsinline preload="metadata" poster="videos/hook-alliance-high-poster.jpg" aria-label="Alliance High medical and mental health camp, Nairobi"><source src="videos/hook-alliance-high.mp4" type="video/mp4"></video>
         <figcaption style="max-width:520px;margin:10px auto 0;font-size:.84rem;font-style:italic;color:var(--muted);text-align:center;">A joint medical and mental health camp with Alliance High School's Peer Counsellors Society, Nairobi.</figcaption>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICES ============ -->
+  <section class="panel" id="panel-services" data-panel="services">
+    <div class="wrap" style="padding-top:40px;">
+      <div class="eyebrow">Taxonomy: Services</div>
+      <h2 style="text-align:left;font-size:1.9rem;margin-bottom:8px;">What you can hire her for</h2>
+      <p style="max-width:70ch;color:var(--muted);margin-bottom:28px;">Eight service tracks, each backed by real program and client work, available as freelance or retainer engagements.</p>
+
+      <div class="service-grid">
+        <div class="service-card">
+          <h3>PR &amp; Press Release Writing</h3>
+          <div class="service-line">
+            <span class="label">Proven through</span>
+            <p>PR &amp; Communications Officer, Octopizzo Foundation; PR pitches and media relations for TikTok Sub-Sahara across 15+ outlets.</p>
+          </div>
+          <div class="service-line">
+            <span class="label">Available as</span>
+            <p>Press release writing, media pitch decks, media list building.</p>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <h3>Social Media &amp; Content Management</h3>
+          <div class="service-line">
+            <span class="label">Proven through</span>
+            <p>Digital Creator &amp; Social Impact Influencer; social content strategy at Octopizzo Foundation.</p>
+          </div>
+          <div class="service-line">
+            <span class="label">Available as</span>
+            <p>Social media management retainers, content calendars, caption and copywriting.</p>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <h3>Account &amp; Client Management</h3>
+          <div class="service-line">
+            <span class="label">Proven through</span>
+            <p>Account Manager (promoted from Admin), TikTok Sub-Sahara: 10+ accounts, sales cycles, retention.</p>
+          </div>
+          <div class="service-line">
+            <span class="label">Available as</span>
+            <p>Freelance account and client management for agencies or SMEs; client onboarding systems.</p>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <h3>Program &amp; Event Management</h3>
+          <div class="service-line">
+            <span class="label">Proven through</span>
+            <p>Programs Manager, HUGs Organization: webinars, activations, monitoring and evaluation, stakeholder mobilisation.</p>
+          </div>
+          <div class="service-line">
+            <span class="label">Available as</span>
+            <p>Event curation, corporate wellness day design, program coordination.</p>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <h3>Workshop &amp; Wellness Facilitation</h3>
+          <div class="service-line">
+            <span class="label">Proven through</span>
+            <p>Mental health webinars, healing circles, corporate wellness sessions.</p>
+          </div>
+          <div class="service-line">
+            <span class="label">Available as</span>
+            <p>Paid facilitation for corporates and NGOs, women's wellness retreats.</p>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <h3>Eco-Fashion Design &amp; Upcycling</h3>
+          <div class="service-line">
+            <span class="label">Proven through</span>
+            <p>Independent eco-fashion designer working with reclaimed materials and wearable art.</p>
+          </div>
+          <div class="service-line">
+            <span class="label">Available as</span>
+            <p>Commissioned upcycled pieces, sustainability-brand collaborations.</p>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <h3>Personal Styling</h3>
+          <div class="service-line">
+            <span class="label">Proven through</span>
+            <p>Wardrobe Stylist on Iss By Iss Studios' TUKI Series, plus independent personal styling clients.</p>
+          </div>
+          <div class="service-line">
+            <span class="label">Available as</span>
+            <p>One-to-one styling sessions, wardrobe consults, styling retainers.</p>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <h3>Admin &amp; Operations Backbone</h3>
+          <div class="service-line">
+            <span class="label">Proven through</span>
+            <p>Executive calendar management, invoicing, accounts receivable follow-up, database management across three roles.</p>
+          </div>
+          <div class="service-line">
+            <span class="label">Available as</span>
+            <p>Virtual and executive assistant services, a reliable fallback income stream for clients who need dependable admin support.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -780,6 +1056,23 @@
   </div>
 </footer>
 
+<button id="chatbot-toggle" aria-label="Open assistant">&#128172;</button>
+<div id="chatbot-panel" role="dialog" aria-label="Assistant chat">
+  <div class="chatbot-header">
+    <div>
+      Ask about Olwande
+      <small>A quick-reply guide, not a live AI</small>
+    </div>
+    <button id="chatbot-close" aria-label="Close chat">&times;</button>
+  </div>
+  <div class="chatbot-messages" id="chatbot-messages"></div>
+  <div class="chatbot-quick" id="chatbot-quick"></div>
+  <form id="chatbot-form">
+    <input type="text" id="chatbot-input" placeholder="Type a question..." autocomplete="off">
+    <button type="submit">Send</button>
+  </form>
+</div>
+
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -809,6 +1102,130 @@
       showPanel(btn.getAttribute('data-goto'));
     });
   });
+
+  /* ---------- CHATBOT ---------- */
+  (function(){
+    var toggle = document.getElementById('chatbot-toggle');
+    var panel = document.getElementById('chatbot-panel');
+    var closeBtn = document.getElementById('chatbot-close');
+    var messages = document.getElementById('chatbot-messages');
+    var quickWrap = document.getElementById('chatbot-quick');
+    var form = document.getElementById('chatbot-form');
+    var input = document.getElementById('chatbot-input');
+
+    var faq = [
+      {
+        keywords: ['service', 'services', 'offer', 'hire', 'freelance', 'work with'],
+        reply: 'She offers eight service tracks: PR &amp; press release writing, social media &amp; content management, account &amp; client management, program &amp; event management, workshop &amp; wellness facilitation, eco-fashion design, personal styling, and admin/operations support. See the Services tab for details.',
+        goto: 'services'
+      },
+      {
+        keywords: ['contact', 'email', 'reach', 'whatsapp', 'phone', 'number', 'linkedin'],
+        reply: 'You can reach her at <a href="mailto:olwandeakoth@gmail.com">olwandeakoth@gmail.com</a>, on <a href="https://wa.me/254708762626" target="_blank" rel="noopener">WhatsApp</a>, or on <a href="https://www.linkedin.com/in/olwande-akoth-270346b6/" target="_blank" rel="noopener">LinkedIn</a>. She is based in Nairobi, Kenya.'
+      },
+      {
+        keywords: ['social impact', 'hugs', 'octopizzo', 'community', 'mental health', 'program', 'wash', 'clean energy'],
+        reply: 'She is Programs Manager at HUGs Organization (mental health and community empowerment) and PR &amp; Communications Officer at Octopizzo Foundation (sustainability, WASH and youth empowerment, including a school feeding pilot). Full detail is on the Social Impact tab.',
+        goto: 'social-impact'
+      },
+      {
+        keywords: ['style', 'styling', 'stylist', 'wardrobe', 'fashion', 'costume', 'tuki'],
+        reply: 'She was Wardrobe Stylist on Iss By Iss Studios\' TUKI Series, designs upcycled eco-fashion pieces, and offers one-to-one personal styling. See the Creative &amp; Styling tab.',
+        goto: 'creative'
+      },
+      {
+        keywords: ['corporate', 'tiktok', 'account manager', 'business', 'sales'],
+        reply: 'She was promoted from Admin to Account Manager for TikTok Sub-Sahara at Capital One Group, managing 10+ accounts. Her full corporate background is on the Corporate tab.',
+        goto: 'corporate'
+      },
+      {
+        keywords: ['available', 'availability', 'rate', 'price', 'cost', 'budget'],
+        reply: 'She is open to freelance, consultancy and full-time opportunities across PR, programs, styling and account management. Message her directly to discuss scope and rates.'
+      },
+      {
+        keywords: ['language', 'speak'],
+        reply: 'She is fluent in English and Swahili, and speaks Dholuo natively.'
+      },
+      {
+        keywords: ['location', 'based', 'nairobi', 'where'],
+        reply: 'She is based in Nairobi, Kenya (314-00100).'
+      }
+    ];
+
+    var defaultQuick = [
+      'What services do you offer?',
+      'How can I contact you?',
+      'Tell me about your social impact work',
+      'What is your styling experience?'
+    ];
+
+    function addBubble(text, who){
+      var b = document.createElement('div');
+      b.className = 'chat-bubble ' + who;
+      b.innerHTML = text;
+      messages.appendChild(b);
+      messages.scrollTop = messages.scrollHeight;
+    }
+
+    function renderQuick(list){
+      quickWrap.innerHTML = '';
+      list.forEach(function(q){
+        var btn = document.createElement('button');
+        btn.type = 'button';
+        btn.textContent = q;
+        btn.addEventListener('click', function(){ handleQuestion(q); });
+        quickWrap.appendChild(btn);
+      });
+    }
+
+    function findAnswer(text){
+      var lower = text.toLowerCase();
+      for (var i = 0; i < faq.length; i++){
+        for (var j = 0; j < faq[i].keywords.length; j++){
+          if (lower.indexOf(faq[i].keywords[j]) !== -1){
+            return faq[i];
+          }
+        }
+      }
+      return null;
+    }
+
+    function handleQuestion(text){
+      if (!text.trim()) return;
+      addBubble(text, 'user');
+      var match = findAnswer(text);
+      if (match){
+        addBubble(match.reply, 'bot');
+        if (match.goto){
+          setTimeout(function(){ showPanel(match.goto); }, 400);
+        }
+      } else {
+        addBubble('I do not have a scripted answer for that yet. The best way to get a real answer is to reach her directly at <a href="mailto:olwandeakoth@gmail.com">olwandeakoth@gmail.com</a> or on <a href="https://wa.me/254708762626" target="_blank" rel="noopener">WhatsApp</a>.', 'bot');
+      }
+      renderQuick(defaultQuick);
+    }
+
+    function openChat(){
+      panel.classList.add('open');
+      if (!messages.children.length){
+        addBubble('Hi! I am a quick-reply guide to Olwande\'s work, not a live AI. Tap a question below or type your own.', 'bot');
+        renderQuick(defaultQuick);
+      }
+      input.focus();
+    }
+
+    toggle.addEventListener('click', function(){
+      panel.classList.contains('open') ? panel.classList.remove('open') : openChat();
+    });
+    closeBtn.addEventListener('click', function(){ panel.classList.remove('open'); });
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var val = input.value;
+      input.value = '';
+      handleQuestion(val);
+    });
+  })();
 </script>
 
 </body>
