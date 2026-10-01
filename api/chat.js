@@ -12,6 +12,7 @@ SOCIAL IMPACT
 - Programs Manager, HUGs Organization, since March 2024 (concurrent/part-time engagement). Leads national mental health and community empowerment programmes focused on women's wellness and psychological safety: women-only wellness events, cross-sector partnerships, corporate wellness webinars, monitoring and evaluation.
 - PR & Communications Officer, Octopizzo Foundation, since November 2025 (consultancy/part-time engagement). Communications strategy for community development, sustainability and youth empowerment. Helped tell the story of the Clean Energy Kitchen and WASH Initiative (a pilot converting sugarcane husks into clean cooking fuel and distributing water filters), which also includes a school feeding programme component to help keep kids in class. Advocacy work in Ugunja, Siaya includes period health.
 - Extensive grassroots outreach: school and community mental health sessions (Mukhwayo Primary in Ugunja, a school in Ruai, St Juliet's School in Kibera, Ajax Library in Mathare), public advocacy with street families in Nairobi's CBD, visits to children's homes and rescue homes (Mathare, Makadara, Eastlands), sanitary product distribution (Ruiru), community empowerment days supporting teen moms in Kibera, and an environmental clean-up drive in Kibera.
+- Partner organisations: the Mukhwayo Primary School outreach in Ugunja is in partnership with Octopizzo Foundation; the Kibera environmental clean-up drive is in partnership with The Garbage Initiative; the children's home, rescue home and library visits (Mathare, Makadara, Eastlands, Ajax Library) are in partnership with YHA Foundation and The Flame Foundation; most of the remaining community and street outreach runs through HUGs Organization.
 
 CREATIVE & STYLING
 - Wardrobe Stylist, Iss By Iss Studios, TUKI Series, 2024: costume prep, on-set assistance, continuity management, wardrobe logistics.
@@ -27,7 +28,7 @@ CORPORATE EXPERIENCE
 - Admin & Customer Care Representative, Leighton Tracking Ltd, October 2013 to February 2016.
 
 SERVICES AVAILABLE FOR HIRE (see the Services tab for full detail)
-1. PR & Press Release Writing: press releases, media pitch decks, media list building.
+1. PR & Press Release Writing: press release writing and publishing.
 2. Social Media & Content Management: management retainers, content calendars, caption/copywriting.
 3. Account & Client Management: freelance account/client management for agencies or SMEs, client onboarding systems.
 4. Program & Event Management: event curation, corporate wellness day design, program coordination.

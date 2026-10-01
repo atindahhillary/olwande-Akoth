@@ -352,34 +352,30 @@
   }
 
   /* ---------- SERVICES ---------- */
-  .service-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:18px;
-    margin-top:8px;
+  .service-list{
+    list-style:none;
+    margin:0;
+    padding:0;
+    counter-reset:svc;
+    max-width:76ch;
   }
-  .service-card{
-    background:var(--white);
-    border:1px solid var(--line);
-    border-radius:var(--radius);
-    padding:22px;
+  .service-list li{
+    counter-increment:svc;
+    padding:18px 0;
+    border-top:1px solid var(--line);
   }
-  .service-card h3{
-    font-size:1.1rem;
-    margin-bottom:12px;
+  .service-list li:first-child{border-top:none;padding-top:0;}
+  .service-list h3{
+    font-size:1.05rem;
+    margin-bottom:8px;
     text-align:left;
   }
-  .service-line{margin-bottom:10px;}
-  .service-line .label{
-    display:block;
-    font-size:.7rem;
-    font-weight:700;
-    text-transform:uppercase;
-    letter-spacing:.06em;
+  .service-list h3::before{
+    content:counter(svc) ". ";
     color:var(--rust);
-    margin-bottom:2px;
   }
-  .service-line p{margin:0;font-size:.9rem;color:#3c332c;}
+  .service-list .svc-line{margin:0 0 4px;font-size:.92rem;color:#3c332c;}
+  .service-list .svc-line strong{color:var(--rust-dark);font-weight:700;}
 
   /* ---------- CHATBOT ---------- */
   #chatbot-toggle{
@@ -550,7 +546,6 @@
     nav ul.open{display:flex;}
     .nav-toggle{display:block;}
     .contact-panel{padding:32px 24px;}
-    .service-grid{grid-template-columns:1fr;}
   }
   @media (max-width:600px){
     section{padding:44px 0;}
@@ -708,115 +703,53 @@
       <h2 style="text-align:left;font-size:1.9rem;margin-bottom:8px;">What you can hire her for</h2>
       <p style="max-width:70ch;color:var(--muted);margin-bottom:28px;">Nine service tracks, each backed by real program and client work, available as freelance or retainer engagements.</p>
 
-      <div class="service-grid">
-        <div class="service-card">
+      <ol class="service-list">
+        <li>
           <h3>PR &amp; Press Release Writing</h3>
-          <div class="service-line">
-            <span class="label">Proven through</span>
-            <p>PR &amp; Communications Officer, Octopizzo Foundation; PR pitches and media relations for TikTok Sub-Sahara across 15+ outlets.</p>
-          </div>
-          <div class="service-line">
-            <span class="label">Available as</span>
-            <p>Press release writing, media pitch decks, media list building.</p>
-          </div>
-        </div>
-
-        <div class="service-card">
+          <p class="svc-line"><strong>Proven through:</strong> PR &amp; Communications Officer, Octopizzo Foundation; PR pitches and media relations for TikTok Sub-Sahara across 15+ outlets.</p>
+          <p class="svc-line"><strong>Available as:</strong> Press release writing and publishing.</p>
+        </li>
+        <li>
           <h3>Social Media &amp; Content Management</h3>
-          <div class="service-line">
-            <span class="label">Proven through</span>
-            <p>Digital Creator &amp; Social Impact Influencer; social content strategy at Octopizzo Foundation.</p>
-          </div>
-          <div class="service-line">
-            <span class="label">Available as</span>
-            <p>Social media management retainers, content calendars, caption and copywriting.</p>
-          </div>
-        </div>
-
-        <div class="service-card">
+          <p class="svc-line"><strong>Proven through:</strong> Digital Creator &amp; Social Impact Influencer; social content strategy at Octopizzo Foundation.</p>
+          <p class="svc-line"><strong>Available as:</strong> Social media management retainers, content calendars, caption and copywriting.</p>
+        </li>
+        <li>
           <h3>Account &amp; Client Management</h3>
-          <div class="service-line">
-            <span class="label">Proven through</span>
-            <p>Account Manager (promoted from Admin), TikTok Sub-Sahara: 10+ accounts, sales cycles, retention.</p>
-          </div>
-          <div class="service-line">
-            <span class="label">Available as</span>
-            <p>Freelance account and client management for agencies or SMEs; client onboarding systems.</p>
-          </div>
-        </div>
-
-        <div class="service-card">
+          <p class="svc-line"><strong>Proven through:</strong> Account Manager (promoted from Admin), TikTok Sub-Sahara: 10+ accounts, sales cycles, retention.</p>
+          <p class="svc-line"><strong>Available as:</strong> Freelance account and client management for agencies or SMEs; client onboarding systems.</p>
+        </li>
+        <li>
           <h3>Program &amp; Event Management</h3>
-          <div class="service-line">
-            <span class="label">Proven through</span>
-            <p>Programs Manager, HUGs Organization: webinars, activations, monitoring and evaluation, stakeholder mobilisation.</p>
-          </div>
-          <div class="service-line">
-            <span class="label">Available as</span>
-            <p>Event curation, corporate wellness day design, program coordination.</p>
-          </div>
-        </div>
-
-        <div class="service-card">
+          <p class="svc-line"><strong>Proven through:</strong> Programs Manager, HUGs Organization: webinars, activations, monitoring and evaluation, stakeholder mobilisation.</p>
+          <p class="svc-line"><strong>Available as:</strong> Event curation, corporate wellness day design, program coordination.</p>
+        </li>
+        <li>
           <h3>Workshop &amp; Wellness Facilitation</h3>
-          <div class="service-line">
-            <span class="label">Proven through</span>
-            <p>Mental health webinars, healing circles, corporate wellness sessions.</p>
-          </div>
-          <div class="service-line">
-            <span class="label">Available as</span>
-            <p>Paid facilitation for corporates and NGOs, women's wellness retreats.</p>
-          </div>
-        </div>
-
-        <div class="service-card">
+          <p class="svc-line"><strong>Proven through:</strong> Mental health webinars, healing circles, corporate wellness sessions.</p>
+          <p class="svc-line"><strong>Available as:</strong> Paid facilitation for corporates and NGOs, women's wellness retreats.</p>
+        </li>
+        <li>
           <h3>Eco-Fashion Design &amp; Upcycling</h3>
-          <div class="service-line">
-            <span class="label">Proven through</span>
-            <p>Independent eco-fashion designer working with reclaimed materials and wearable art.</p>
-          </div>
-          <div class="service-line">
-            <span class="label">Available as</span>
-            <p>Commissioned upcycled pieces, sustainability-brand collaborations.</p>
-          </div>
-        </div>
-
-        <div class="service-card">
+          <p class="svc-line"><strong>Proven through:</strong> Independent eco-fashion designer working with reclaimed materials and wearable art.</p>
+          <p class="svc-line"><strong>Available as:</strong> Commissioned upcycled pieces, sustainability-brand collaborations.</p>
+        </li>
+        <li>
           <h3>Personal Styling</h3>
-          <div class="service-line">
-            <span class="label">Proven through</span>
-            <p>Wardrobe Stylist on Iss By Iss Studios' TUKI Series, plus independent personal styling clients.</p>
-          </div>
-          <div class="service-line">
-            <span class="label">Available as</span>
-            <p>One-to-one styling sessions, wardrobe consults, styling retainers.</p>
-          </div>
-        </div>
-
-        <div class="service-card">
+          <p class="svc-line"><strong>Proven through:</strong> Wardrobe Stylist on Iss By Iss Studios' TUKI Series, plus independent personal styling clients.</p>
+          <p class="svc-line"><strong>Available as:</strong> One-to-one styling sessions, wardrobe consults, styling retainers.</p>
+        </li>
+        <li>
           <h3>Admin &amp; Operations Backbone</h3>
-          <div class="service-line">
-            <span class="label">Proven through</span>
-            <p>Executive calendar management, invoicing, accounts receivable follow-up, database management across three roles.</p>
-          </div>
-          <div class="service-line">
-            <span class="label">Available as</span>
-            <p>Virtual and executive assistant services, a reliable fallback income stream for clients who need dependable admin support.</p>
-          </div>
-        </div>
-
-        <div class="service-card">
+          <p class="svc-line"><strong>Proven through:</strong> Executive calendar management, invoicing, accounts receivable follow-up, database management across three roles.</p>
+          <p class="svc-line"><strong>Available as:</strong> Virtual and executive assistant services, a reliable fallback income stream for clients who need dependable admin support.</p>
+        </li>
+        <li>
           <h3>Public Speaking &amp; Hosting</h3>
-          <div class="service-line">
-            <span class="label">Proven through</span>
-            <p>Broadcast hosting, motivational keynotes and podcasting that inspire audiences with authenticity and clarity.</p>
-          </div>
-          <div class="service-line">
-            <span class="label">Available as</span>
-            <p>Event and broadcast hosting, keynote speaking, podcast guesting or co-hosting.</p>
-          </div>
-        </div>
-      </div>
+          <p class="svc-line"><strong>Proven through:</strong> Broadcast hosting, motivational keynotes and podcasting that inspire audiences with authenticity and clarity.</p>
+          <p class="svc-line"><strong>Available as:</strong> Event and broadcast hosting, keynote speaking, podcast guesting or co-hosting.</p>
+        </li>
+      </ol>
     </div>
   </section>
 
@@ -874,7 +807,7 @@
           </figure>
           <figure>
             <video class="video-card" controls playsinline preload="metadata" poster="videos/environment-cleanup-kibera-poster.jpg" aria-label="Environmental clean-up drive, Kibera"><source src="videos/environment-cleanup-kibera.mp4" type="video/mp4"></video>
-            <figcaption>An environmental clean-up drive in Kibera.</figcaption>
+            <figcaption>An environmental clean-up drive in Kibera, in partnership with The Garbage Initiative.</figcaption>
           </figure>
         </div>
       </div>
@@ -893,23 +826,23 @@
         <div class="media-grid">
           <figure>
             <img src="images/gallery-school-outreach-1.jpg" alt="Community wellness talk with school students under a tree">
-            <figcaption>Under a tree at a rural school in Ugunja (Mukhwayo Primary School), talking mental health with students who rarely get asked how they are doing.</figcaption>
+            <figcaption>Under a tree at a rural school in Ugunja (Mukhwayo Primary School), talking mental health with students who rarely get asked how they are doing. In partnership with Octopizzo Foundation.</figcaption>
           </figure>
           <figure>
             <img src="images/gallery-school-outreach-3.jpg" alt="Addressing a school assembly in red uniforms">
-            <figcaption>A different school, a different uniform, the same message repeated until it sticks (a school in Ruai).</figcaption>
+            <figcaption>A different school, a different uniform, the same message repeated until it sticks (a school in Ruai). In partnership with HUGs Organization.</figcaption>
           </figure>
           <figure>
             <img src="images/gallery-school-outreach-2.jpg" alt="Addressing a large school assembly outdoors">
-            <figcaption>Still in the field, still asking the room to pay attention.</figcaption>
+            <figcaption>Still in the field, still asking the room to pay attention. In partnership with HUGs Organization.</figcaption>
           </figure>
           <figure>
             <video class="video-card" controls playsinline preload="metadata" poster="videos/st-juliets-school-poster.jpg" aria-label="Wellness session at St Juliet's School, Kibera"><source src="videos/st-juliets-school.mp4" type="video/mp4"></video>
-            <figcaption>A wellness session at St Juliet's School, Kibera.</figcaption>
+            <figcaption>A wellness session at St Juliet's School, Kibera, in partnership with HUGs Organization.</figcaption>
           </figure>
           <figure>
             <video class="video-card" controls playsinline preload="metadata" poster="videos/ajax-library-poster.jpg" aria-label="Reading and talking with kids at Ajax Library, Mathare"><source src="videos/ajax-library.mp4" type="video/mp4"></video>
-            <figcaption>Reading and talking with kids at Ajax Library, Mathare.</figcaption>
+            <figcaption>Reading and talking with kids at Ajax Library, Mathare, in partnership with YHA Foundation and The Flame Foundation.</figcaption>
           </figure>
         </div>
       </div>
@@ -922,7 +855,7 @@
         <div class="media-grid">
           <figure>
             <img src="images/gallery-cbd-activation.jpg" alt="Speaking to a crowd during a public activation in Nairobi CBD">
-            <figcaption>Addressing a crowd of street families in Nairobi's CBD during a public mental health activation.</figcaption>
+            <figcaption>Addressing a crowd of street families in Nairobi's CBD during a public mental health activation. In partnership with HUGs Organization.</figcaption>
           </figure>
           <figure>
             <img src="images/gallery-cbd-advocacy.jpg" alt="Briefing partners during an advocacy campaign in Nairobi">
@@ -930,11 +863,11 @@
           </figure>
           <figure>
             <video class="video-card" controls playsinline preload="metadata" poster="videos/medical-camp-streets-poster.jpg" aria-label="Medical camp on Nairobi's streets"><source src="videos/medical-camp-streets.mp4" type="video/mp4"></video>
-            <figcaption>A medical camp set up right on Nairobi's streets, meeting street families where they are.</figcaption>
+            <figcaption>A medical camp set up right on Nairobi's streets, meeting street families where they are. In partnership with HUGs Organization.</figcaption>
           </figure>
           <figure>
             <video class="video-card" controls playsinline preload="metadata" poster="videos/street-families-medical-poster.jpg" aria-label="Medical camp for street families, Nairobi"><source src="videos/street-families-medical.mp4" type="video/mp4"></video>
-            <figcaption>A medical camp for street families in Nairobi. Healthcare with no waiting room and no appointment book.</figcaption>
+            <figcaption>A medical camp for street families in Nairobi. Healthcare with no waiting room and no appointment book. In partnership with HUGs Organization.</figcaption>
           </figure>
         </div>
       </div>
@@ -947,19 +880,19 @@
         <div class="media-grid">
           <figure>
             <img src="images/gallery-shelter-visit.jpg" alt="Evening visit to a children's shelter">
-            <figcaption>An evening visit to a children's shelter in Mathare. The work does not stop when the sun goes down.</figcaption>
+            <figcaption>An evening visit to a children's shelter in Mathare. The work does not stop when the sun goes down. In partnership with YHA Foundation and The Flame Foundation.</figcaption>
           </figure>
           <figure>
             <video class="video-card" controls playsinline preload="metadata" poster="videos/childrens-home-mathare-poster.jpg" aria-label="Visit to a children's home, Mathare"><source src="videos/childrens-home-mathare.mp4" type="video/mp4"></video>
-            <figcaption>A visit to a children's home in Mathare.</figcaption>
+            <figcaption>A visit to a children's home in Mathare, in partnership with YHA Foundation and The Flame Foundation.</figcaption>
           </figure>
           <figure>
             <video class="video-card" controls playsinline preload="metadata" poster="videos/makadara-childrens-home-poster.jpg" aria-label="Children's home in Makadara, planting trees for mental health"><source src="videos/makadara-childrens-home.mp4" type="video/mp4"></video>
-            <figcaption>A children's home in Makadara, this time planting trees for mental health.</figcaption>
+            <figcaption>A children's home in Makadara, in partnership with YHA Foundation and The Flame Foundation, planting trees for mental health.</figcaption>
           </figure>
           <figure>
             <video class="video-card" controls playsinline preload="metadata" poster="videos/rescue-home-eastlands-poster.jpg" aria-label="Rescue home in Eastlands supporting teenage moms"><source src="videos/rescue-home-eastlands.mp4" type="video/mp4"></video>
-            <figcaption>A rescue home in Eastlands supporting teenage moms, part of the wider network of shelters this work touches.</figcaption>
+            <figcaption>A rescue home in Eastlands supporting teenage moms, in partnership with YHA Foundation and The Flame Foundation.</figcaption>
           </figure>
         </div>
       </div>
@@ -972,11 +905,11 @@
         <div class="media-grid">
           <figure>
             <img src="images/gallery-community-day.jpg" alt="Large group photo at a community empowerment day">
-            <figcaption>A community empowerment day draws a bigger crowd every year, empowering teen moms in Kibera.</figcaption>
+            <figcaption>A community empowerment day draws a bigger crowd every year, empowering teen moms in Kibera. In partnership with HUGs Organization.</figcaption>
           </figure>
           <figure>
             <img src="images/gallery-sanitary-drive.jpg" alt="Volunteers sorting sanitary products for a distribution drive">
-            <figcaption>Sorting sanitary products for distribution in Ruiru. Dignity, delivered one box at a time.</figcaption>
+            <figcaption>Sorting sanitary products for distribution in Ruiru. Dignity, delivered one box at a time. In partnership with HUGs Organization.</figcaption>
           </figure>
           <figure>
             <img src="images/gallery-finding-me.jpg" alt="With partners at a Finding Me Community activation">
@@ -984,7 +917,7 @@
           </figure>
           <figure>
             <img src="images/gallery-community-booth.jpg" alt="Volunteers at a community booth">
-            <figcaption>A community wellness booth.</figcaption>
+            <figcaption>A community wellness booth, in partnership with HUGs Organization.</figcaption>
           </figure>
         </div>
       </div>
